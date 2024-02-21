@@ -49,7 +49,7 @@ const Footer=()=>{
       <img src='assets/nextIcon.svg' alt='nextIcon' onClick={()=>playNext()}/>
     </div>
     <div className='downloadIconContainer flex justifyCenter'>
-      <Link to={currentSong!=null?`/8d/${currentSong}`:'/8d/'}>
+      <Link to={currentSong!=null?`/audic/${currentSong}`:'/audic/'}>
         <img src='assets/downloadIcon.svg' alt='downloadIcon'/>
       </Link>
     </div>

@@ -21,7 +21,7 @@ const Header=()=>{
     }
     return<header className='flex alignCenter spaceBetween w-100'>
         <div className="logoContainer">
-            <Link to='/8d/'>
+            <Link to='/audic/'>
                 <img src="assets/logo.svg" alt="logo"/>
             </Link>
         </div>

@@ -27,8 +27,8 @@ const Audic=()=>{
           <BrowserRouter>
             <Header/>
             <Routes>
-              <Route path='/8d' element={<Main/>}/>
-              <Route path='/8d/:song' element={<Downloadsong/>}/>
+              <Route path='/audic' element={<Main/>}/>
+              <Route path='/audic/:song' element={<Downloadsong/>}/>
             </Routes>
             <Footer/>
           </BrowserRouter>
