@@ -1,0 +1,91 @@
+footer{
+    position:fixed;
+    bottom: 0;
+    height: 7.5vh;
+    background-color: var(--headerSidebarSongFooterBackgroundWhite);
+    border-top: solid 0.075rem var(--borderColor);
+    padding:0 5rem;
+    z-index:2;
+}
+footer .seekBarContainer{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    height: 0.2rem;
+}
+footer .seekBarContainer .seekBarBackground{
+    position:absolute;
+    top:0;
+    left: 0;
+    height: 0.2rem;
+    background-color: var(--masterRed);
+    z-index: 1;
+}
+footer .seekBarContainer .seekBar{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    height: 0.2rem;
+    z-index: 0;
+    -webkit-appearance: none;
+    background-color: var(--mainBackgroundWhite);
+    cursor: pointer;
+    outline: none;
+}
+.seekBar::-webkit-slider-thumb{
+    appearance: none;
+    -webkit-appearance: none;
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--masterRed);
+}
+.seekBar:hover::-webkit-slider-thumb{
+    width: 0.75rem;
+    height: 0.75rem;
+}
+.songImgNameContainer{
+    width: 33.3%;
+}
+.songImgNameContainer img{
+    width: 3.25rem;
+    border-radius: 0.3rem;
+}
+.songImgNameContainer h2{
+    margin-left: 0.5rem;
+    color: var(--subTextBlack);
+}
+.middleIconsContainer{
+    width: 33.3%;
+    padding:0 10%;
+}
+.middleIconsContainer img{
+    cursor: pointer;
+    width: 1.5rem;
+}
+.middleIconsContainer img:nth-child(2){
+    width: 2.5rem;
+    background-color: var(--masterRed);
+    border-radius: 50%;
+}
+.downloadIconContainer{
+    width: 33.3%;
+}
+.downloadIconContainer a img{
+    width: 2rem;
+    border:solid 0.1rem var(--masterRed);
+    border-radius: 50%;
+}
+@media screen and (max-width:480px){
+    footer{
+        padding:0 1rem;
+    }
+    .songImgNameContainer h2{
+        display: none;
+    }
+    .middleIconsContainer{
+        padding:0 0.25rem;
+    }
+}
