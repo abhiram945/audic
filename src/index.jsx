@@ -30,9 +30,10 @@ const Audic=()=>{
             <Routes>
               <Route path='/audic' element={
                 <React.Suspense fallback={
-                  <main className='flex justifyCenter alignCenter w-100 loadingContainer'>
+                  <main className='flex loadingContainer justifyCenter alignCenter w-100'>
                     <img src='assets/logo.svg' alt='logo'/>
                     <p>Loading...</p>
+                    <p>Use Headphones 🎧 to experience the Immersive 8D</p>
                   </main>
                 }>
                   <Main/>

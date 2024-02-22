@@ -21,6 +21,10 @@ main{
         display: none;
     }
 }
+.loadingContainer{
+    flex-direction: column;
+    gap:1rem;
+}
 .loadingContainer img{
     display: block;
 }
@@ -73,10 +77,6 @@ main{
     cursor: pointer;
 }
 @media screen and (max-width:480px){
-    .loadingContainer{
-        flex-direction: column;
-        gap:1rem;
-    }
     .loadingContainer img{
         width: 75vw;
     }
