@@ -8,7 +8,7 @@ const Main=()=>{
         <aside className='flex justifyCenter alignCenter'>
             <p className='useHeadphones'>Use Headphones 🎧<br/> to experience the<br/> 8D Immersive Multi Dimensional Music</p>
         </aside>
-        {apiData!==null ? (
+        {apiData ? (
             <main>
                 {apiData.allLists.map((eachListName, eachListIndex) => (
                     <div key={eachListIndex} className='categoryContainer'>
@@ -32,7 +32,10 @@ const Main=()=>{
                 ))}
             </main>
             ) :
-            (<></>)
+            (<main className='flex justifyCenter alignCenter loadingContainer'>
+                <img src='assets/logo.svg' alt='logo'/>
+                <p>Loading...</p>
+            </main>)
         }
     </>
 }

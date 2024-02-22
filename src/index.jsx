@@ -1,11 +1,10 @@
-import React, { createContext, useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './header';
-// import Main from './main';
+import Main from './main';
 import Footer from './footer';
 import Downloadsong from './downloadSong';
-const Main = React.lazy(()=> import("./main.jsx")); //lazyload should be at last
+import { createContext, useState, useEffect } from 'react';
 
 const Audic=()=>{
   const [apiData, setApiData] = useState(null);
@@ -15,7 +14,7 @@ const Audic=()=>{
     useEffect(() => {
         const fetchData = async () => {
         try{
-            await fetch('https://raw.githubusercontent.com/abhiram945/api/main/api.json').then(response=>response.json()).then(jsonData=>setApiData(jsonData));
+            await fetch('assets/api.json').then(response=>response.json()).then(jsonData=>setApiData(jsonData));
         }
         catch(error){
             console.error();
@@ -28,17 +27,7 @@ const Audic=()=>{
           <BrowserRouter>
             <Header/>
             <Routes>
-              <Route path='/audic' element={
-                <React.Suspense fallback={
-                  <main className='flex loadingContainer justifyCenter alignCenter w-100'>
-                    <img src='assets/logo.svg' alt='logo'/>
-                    <p>Loading...</p>
-                    <p>Use Headphones 🎧 to experience the Immersive 8D</p>
-                  </main>
-                }>
-                  <Main/>
-                </React.Suspense>
-              }/>
+              <Route path='/audic' element={<Main/>}/>
               <Route path='/audic/:song' element={<Downloadsong/>}/>
             </Routes>
             <Footer/>
