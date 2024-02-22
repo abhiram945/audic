@@ -1,13 +1,17 @@
 {
   "files": {
-    "main.css": "/audic/static/css/main.f48f4cf9.css",
-    "main.js": "/audic/static/js/main.4e9a63aa.js",
+    "main.css": "/audic/static/css/main.5ce758d2.css",
+    "main.js": "/audic/static/js/main.b68352a8.js",
+    "static/css/139.e69819b9.chunk.css": "/audic/static/css/139.e69819b9.chunk.css",
+    "static/js/139.5c437ed8.chunk.js": "/audic/static/js/139.5c437ed8.chunk.js",
     "index.html": "/audic/index.html",
-    "main.f48f4cf9.css.map": "/audic/static/css/main.f48f4cf9.css.map",
-    "main.4e9a63aa.js.map": "/audic/static/js/main.4e9a63aa.js.map"
+    "main.5ce758d2.css.map": "/audic/static/css/main.5ce758d2.css.map",
+    "main.b68352a8.js.map": "/audic/static/js/main.b68352a8.js.map",
+    "139.e69819b9.chunk.css.map": "/audic/static/css/139.e69819b9.chunk.css.map",
+    "139.5c437ed8.chunk.js.map": "/audic/static/js/139.5c437ed8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f48f4cf9.css",
-    "static/js/main.4e9a63aa.js"
+    "static/css/main.5ce758d2.css",
+    "static/js/main.b68352a8.js"
   ]
 }
