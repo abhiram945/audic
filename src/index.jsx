@@ -1,10 +1,11 @@
+import React, { createContext, useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './header';
-import Main from './main';
+// import Main from './main';
 import Footer from './footer';
 import Downloadsong from './downloadSong';
-import { createContext, useState, useEffect } from 'react';
+const Main = React.lazy(()=> import("./main.jsx")); //lazyload should be at last
 
 const Audic=()=>{
   const [apiData, setApiData] = useState(null);
@@ -27,7 +28,16 @@ const Audic=()=>{
           <BrowserRouter>
             <Header/>
             <Routes>
-              <Route path='/audic' element={<Main/>}/>
+              <Route path='/audic' element={
+                <React.Suspense fallback={
+                  <main className='flex justifyCenter alignCenter w-100 loadingContainer'>
+                    <img src='assets/logo.svg' alt='logo'/>
+                    <p>Loading...</p>
+                  </main>
+                }>
+                  <Main/>
+                </React.Suspense>
+              }/>
               <Route path='/audic/:song' element={<Downloadsong/>}/>
             </Routes>
             <Footer/>

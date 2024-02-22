@@ -32,10 +32,7 @@ const Main=()=>{
                 ))}
             </main>
             ) :
-            (<main className='flex justifyCenter alignCenter loadingContainer'>
-                <img src='assets/logo.svg' alt='logo'/>
-                <p>Loading...</p>
-            </main>)
+            (<></>)
         }
     </>
 }

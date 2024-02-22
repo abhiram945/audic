@@ -5,13 +5,13 @@ import { useState } from 'react';
 import {useContext} from 'react';
 import { musicContext } from './index';
 const Header=()=>{
-    const {apiData}=useContext(musicContext);
+    const {apiData, setCurrentSong}=useContext(musicContext);
     const [activeMenu, setActivemenu]=useState(false);
     const [filteredSongs, setFilteredSongs]=useState([]);
     const handleSearch=(event)=>{
         if(event.target.value!=="" && event.target.value!==" "){
             const filteredSongs=apiData.allLists.map((list,listIndex)=>(
-                list.filter((song,songIndex)=>song.toLowerCase().includes(event.target.value))
+                list.filter((song,songIndex)=>song.toLowerCase().includes((event.target.value).toLowerCase()))
             ));
             setFilteredSongs(filteredSongs);
         }
@@ -33,7 +33,7 @@ const Header=()=>{
                 .filter(songList => songList.length > 0) // Filter out empty arrays
                 .map((songList, listIndex) => (
                     songList.map((song, index) => (
-                        <p key={index}>{song}</p>
+                        <p key={index} onClick={()=>{setCurrentSong(song); setFilteredSongs([])}}>{song}</p>
                     ))
                 ))
                 }            

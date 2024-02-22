@@ -21,6 +21,8 @@
 }
 .songInfoContainer img{
     width: 22.5vw;
+    border-radius: 1rem;
+    box-shadow:0 0 2.5rem var(--borderColor);
 }
 .generateButtonContainer button{
     width: 12.5rem;
