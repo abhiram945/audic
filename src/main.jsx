@@ -35,6 +35,7 @@ const Main=()=>{
             (<main className='flex justifyCenter alignCenter loadingContainer'>
                 <img src='assets/logo.svg' alt='logo'/>
                 <p>Loading...</p>
+                <p className='mNone'>Use Headphones 🎧 to experience the Immersive 8D effect</p>
             </main>)
         }
     </>
