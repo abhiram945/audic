@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/audic/static/css/main.1d67e148.css",
-    "main.js": "/audic/static/js/main.467de8e2.js",
+    "main.css": "/audic/static/css/main.1c4142b6.css",
+    "main.js": "/audic/static/js/main.8a7a228d.js",
     "index.html": "/audic/index.html",
-    "main.1d67e148.css.map": "/audic/static/css/main.1d67e148.css.map",
-    "main.467de8e2.js.map": "/audic/static/js/main.467de8e2.js.map"
+    "main.1c4142b6.css.map": "/audic/static/css/main.1c4142b6.css.map",
+    "main.8a7a228d.js.map": "/audic/static/js/main.8a7a228d.js.map"
   },
   "entrypoints": [
-    "static/css/main.1d67e148.css",
-    "static/js/main.467de8e2.js"
+    "static/css/main.1c4142b6.css",
+    "static/js/main.8a7a228d.js"
   ]
 }
