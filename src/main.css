@@ -18,10 +18,11 @@ main{
     padding:1rem;
     background-color: var(--mainBackgroundWhite);
     &::-webkit-scrollbar{
-        display: none;
+        display: none !important;
     }
 }
 .loadingContainer{
+    height: 100vh;
     flex-direction: column;
     gap:1.5rem;
 }
@@ -74,6 +75,10 @@ main{
     cursor: pointer;
 }
 @media screen and (max-width:480px){
+    main{
+        height: 100%;
+        padding:4.25rem 1rem;
+    }
     .loadingContainer img{
         width: 75vw;
     }
@@ -84,7 +89,7 @@ main{
         box-shadow: unset;
     }
     aside{
-        position: absolute;
+        position:fixed;
         top:7.5vh;
         bottom: 7.5vh;
         left: 0;

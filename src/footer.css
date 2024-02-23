@@ -75,8 +75,6 @@ footer .seekBarContainer .seekBar{
 }
 .downloadIconContainer a img{
     width: 2rem;
-    border:solid 0.1rem var(--masterRed);
-    border-radius: 50%;
 }
 @media screen and (max-width:480px){
     footer{

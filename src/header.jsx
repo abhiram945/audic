@@ -40,8 +40,8 @@ const Header=()=>{
             </div>
         </div>
         <div className='iconsContainer none block'>
-            {activeMenu ? <img src='assets/closeIcon.svg' alt='closeIcon' onClick={()=>{setActivemenu(false);document.querySelector('#root aside').classList.remove('asideActive');}}/>:
-            <img src='assets/queueIcon.svg' alt='queueIcon' onClick={()=>{setActivemenu(true);document.querySelector('#root aside').classList.add('asideActive');}}/>
+            {activeMenu ? <img src='assets/closeIcon.svg' alt='closeIcon' onClick={()=>{try{setActivemenu(false);document.querySelector('#root aside').classList.remove('asideActive');}catch(e){}}}/>:
+            <img src='assets/queueIcon.svg' alt='queueIcon' onClick={()=>{try{setActivemenu(true);document.querySelector('#root aside').classList.add('asideActive');}catch(e){}}}/>
             } 
         </div>
     </header>
