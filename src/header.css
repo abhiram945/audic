@@ -50,8 +50,8 @@ header{
     cursor: pointer;
 }
 .searchResultsContainer p:hover{
-    background-color: var(--borderColor);
-    color: var(--headingBlack);
+    background: var(--hoverRed);
+    color: var(--masterRed);
 }
 @media screen and (max-width:480px){
     header{
