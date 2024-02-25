@@ -11,6 +11,8 @@ const Audic=()=>{
     const [currentSong, setCurrentSong]=useState(null);
     const [songIndex, setSongIndex]=useState(0);
     const [listIndex, setListIndex]=useState(0);
+    const [queue, setQueue]=useState([]);
+    const [queueIndex, setQueueIndex]=useState(-1);
     const shuffleData = (data) => {
     const shuffledData = { ...data };
     shuffledData.allLists = shuffledData.allLists.map(array => {
@@ -34,7 +36,7 @@ const Audic=()=>{
     fetchData();
     }, []);
     return <>
-        <musicContext.Provider value={{apiData, setApiData, currentSong, setCurrentSong, songIndex, setSongIndex, listIndex, setListIndex}}>
+        <musicContext.Provider value={{apiData, setApiData, currentSong, setCurrentSong, songIndex, setSongIndex, listIndex, setListIndex, queue, setQueue, queueIndex, setQueueIndex}}>
             <BrowserRouter>
             <Header/>
             <Routes>

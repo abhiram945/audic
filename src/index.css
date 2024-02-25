@@ -10,6 +10,7 @@
 }
 :root{
     --masterRed :#FF4545;
+    --hoverRed :linear-gradient(90deg, #FFF2F2 .07%, rgba(255, 255, 255, 0) 99.91%);
     --headerSidebarSongFooterBackgroundWhite:#FFFFFF;
     --mainBackgroundWhite:#FBFCFF;
     --headingBlack:#222428;

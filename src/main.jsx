@@ -3,10 +3,15 @@ import './index.css';
 import {useContext} from 'react';
 import { musicContext } from './index';
 const Main=()=>{
-    const {apiData, setApiData, currentSong, setCurrentSong, songIndex, setSongIndex, listIndex, setListIndex}=useContext(musicContext);
+    const {apiData, setApiData, currentSong, setCurrentSong, songIndex, setSongIndex, listIndex, setListIndex, queue, setQueue,queueIndex,setQueueIndex}=useContext(musicContext);
     return<>
-        <aside className='flex justifyCenter alignCenter'>
-            <p className='useHeadphones'>Use Headphones 🎧<br/> to experience the<br/> 8D Immersive Multi Dimensional Music</p>
+        <aside className='flex alignCenter justifyCenter'>
+            <div className={`flex queueSongs ${queue.length===0?'':'alignTop'}`}>
+            {
+                queue.length>=1 ? queue.map((indexes,index) => <p key={index} className={index===queueIndex?'queueSong activeHover':'queueSong'} onClick={()=>{setCurrentSong(apiData.allLists[queue[index][0]][queue[index][1]]); setQueueIndex(index)}}>{apiData.allLists[indexes[0]][indexes[1]]}</p>):<p className='useHeadphones'>Use Headphones 🎧<br/> to experience the<br/> 8D Immersive Multi Dimensional Music</p>
+            }
+            </div>
+            <button className='queueButton' onClick={()=>setQueue([])}>{queue.length===0?'Click on + to add to queue':'clear queue'}</button>
         </aside>
         {apiData ? (
             <main>
@@ -23,7 +28,9 @@ const Main=()=>{
                                     }}/>
                                     <div className='flex songNamePlus spaceBetween alignCenter'>
                                         <p>{eachSongName}</p>
-                                        <img src='assets/plusIcon.svg' alt='plusIcon'/>
+                                        <img src='assets/plusIcon.svg' alt='plusIcon'
+                                        onClick={()=>{setQueue([...queue,[eachListIndex,eachSongIndex]])}}
+                                        />
                                     </div>
                                 </div>
                             ))}

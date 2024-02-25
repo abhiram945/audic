@@ -1,7 +1,9 @@
 aside{
     height: 85vh;
     width: 20vw;
-    padding:1rem;
+    padding:0.5rem;
+    flex-direction: column;
+    gap:1%;
     border-right:solid 0.075rem var(--borderColor);
     background-color: var(--headerSidebarSongFooterBackgroundWhite);
 }
@@ -9,6 +11,43 @@ aside .useHeadphones{
     text-align: center;
     line-height: 1.5rem;
     color: var(--subTextBlack);
+}
+.queueSongs{
+    width: 100%;
+    padding: 0.5rem;
+}
+.alignTop{
+    flex-direction: column;
+    height: 95%;
+    overflow-y: scroll;
+}
+.alignTop::-webkit-scrollbar{
+    display: none;
+}
+.queueSongs .queueSong{
+    width: 100%;
+    color: var(--subTextBlack);
+    padding:0.5rem;
+}
+.queueSong:hover{
+    background: var(--hoverRed);
+    color: var(--masterRed);
+    cursor: pointer;
+}
+.queueSongs .activeHover{
+    background: var(--hoverRed);
+    color: var(--masterRed);
+}
+.queueButton{
+    padding:0.5rem;
+    border-radius: 0.75rem;
+    border: none;
+    background-color: var(--borderColor);
+    color: var(--headingBlack);
+    cursor: pointer;
+}
+.queueButton:active{
+    scale: 0.95;
 }
 main{
     height: 85vh;
@@ -27,6 +66,7 @@ main{
     gap:1.5rem;
 }
 .loadingContainer p{
+    text-align: center;
     font-size: 2rem;
     margin-left: 2.5rem;
     color: var(--subTextBlack);

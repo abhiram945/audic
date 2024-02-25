@@ -6,7 +6,7 @@ import { musicContext } from './index';
 const Footer=()=>{
   const seekBarRef= useRef(null);
   const audioRef= useRef(null);
-  const {apiData,setApiData,currentSong, setCurrentSong, songIndex, setSongIndex, listIndex, setListIndex}=useContext(musicContext);
+  const {apiData,setApiData,currentSong, setCurrentSong, songIndex, setSongIndex, listIndex, setListIndex, queue,setQueue,queueIndex,setQueueIndex}=useContext(musicContext);
   const [width, setWidth]=useState(0);
   const [value, setValue]=useState(0);
   const [isplaying, setIsplaying] = useState(false);
@@ -19,14 +19,28 @@ const Footer=()=>{
     setWidth(audioRef.current ? `${(audioRef.current.currentTime/audioRef.current.duration *100)}%`:'0');
   }
   const playNext=()=>{
-    const nextSongIndex = (songIndex+1)%apiData.allLists[listIndex].length;
-    setSongIndex(nextSongIndex);
-    setCurrentSong(apiData.allLists[listIndex][nextSongIndex]);
+    if(queue.length!==0){
+      let newQueueIndex = (queueIndex+1)%queue.length;
+      setQueueIndex(newQueueIndex);
+      setCurrentSong(apiData.allLists[queue[newQueueIndex][0]][queue[newQueueIndex][1]])
+    }
+    else{
+      const nextSongIndex = (songIndex+1)%apiData.allLists[listIndex].length;
+      setSongIndex(nextSongIndex);
+      setCurrentSong(apiData.allLists[listIndex][nextSongIndex]);
+    }
   }
   const playPrevious=()=>{
-    const previousSongIndex = (songIndex-1+apiData.allLists[listIndex].length)%apiData.allLists[listIndex].length;
-    setSongIndex(previousSongIndex);
-    setCurrentSong(apiData.allLists[listIndex][previousSongIndex]);
+    if(queue.length!==0){
+      let newQueueIndex = (queueIndex-1+queue.length)%queue.length;
+      setQueueIndex(newQueueIndex);
+      setCurrentSong(apiData.allLists[queue[newQueueIndex][0]][queue[newQueueIndex][1]])
+    }
+    else{
+      const previousSongIndex = (songIndex-1+apiData.allLists[listIndex].length)%apiData.allLists[listIndex].length; 
+      setSongIndex(previousSongIndex);
+      setCurrentSong(apiData.allLists[listIndex][previousSongIndex]);
+    }
   }
   return <footer className='flex alignCenter w-100'>
     <audio ref={audioRef} src={currentSong ? `assets/music/${currentSong}.mp3`:null} autoPlay onLoadedMetadata={()=>setWidth(0)} onTimeUpdate={()=>{handleTimeUpdate()}} onPlay={()=>setIsplaying(true)} onEnded={()=>{playNext()}}/>
